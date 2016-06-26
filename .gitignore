@@ -35,3 +35,9 @@ Intermediate/
 *.vcproj
 *.vcxproj
 *.vcxproj.filters
+*.vcxproj.user
+
+# Some build files
+*.ilk
+*.pdb
+*.idb
