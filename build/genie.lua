@@ -195,3 +195,42 @@ solution "ImWindow"
 		configuration		"Release"
 			targetsuffix	"_r"
 			flags			{ "Optimize" }
+
+	project "ImWindowSDL"
+		uuid				"C6F66561-9D7F-4347-B906-227CC03961F7"
+		kind				"WindowedApp"
+		targetdir			"../Output/"
+		
+		links				{ "ImWindow" }
+		files {
+							"../ImWindowSDL/**.cpp",
+							"../ImWindowSDL/**.h",
+							"../Externals/ImGui/imgui/examples/sdl_opengl_example/imgui_impl_sdl.cpp"
+		}	
+		
+		includedirs {
+							"../ImWindow",
+							"../Externals/ImGui",
+							"../Externals/ImGui/imgui",
+							"../Externals/ImGui/imgui/examples/sdl_opengl_example",
+							"../Externals/SDL2/include",
+		}
+		
+		
+		platforms			"x32"
+			libdirs {
+							"../Externals/SDL2/lib/x86"
+			}
+			
+		platforms			"x64"
+			libdirs {
+							"../Externals/SDL2/lib/x64"
+			}
+
+		configuration		"Debug"
+			targetsuffix	"_d"
+			flags			{ "Symbols" }
+			
+		configuration		"Release"
+			targetsuffix	"_r"
+			flags			{ "Optimize" }
